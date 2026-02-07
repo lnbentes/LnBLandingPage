@@ -1,26 +1,47 @@
-:root {
-    --clr-dark-primary: #0059B8;
-  }
+/* Custom Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-.bg-fundo{
-    background-color: var(--clr-dark-primary);
+body {
+  font-family: 'Inter', sans-serif;
+  /* Transition for smooth theme switching */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.tamanho{
-  min-height: 100vh;
-}
-
-.map{
-  aspect-ratio: 2/1;
+/* Chart Container Strict Styling */
+.chart-container {
+  position: relative;
   width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 350px;
+  max-height: 400px;
 }
 
-@media (max-width: 560px) {
-  .map{
-    width: 88vw;
+@media (max-width: 768px) {
+  .chart-container {
+    height: 280px;
+  }
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
 
-  #sobre{
-    height: 160vh;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
